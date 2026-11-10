@@ -42,7 +42,7 @@ jobs:
           report_paths: 'conductor-clients/java/**/build/test-results/test/TEST-*.xml'
       - name: Set PR Status to Failure
         if: ${{ failure() }}
-        uses: actions/github-script@v6
+        uses: actions/github-script@v9
         with:
           script: |
             const { owner, repo } = context.repo;
@@ -57,7 +57,7 @@ jobs:
             });
       - name: Set PR Status to Success
         if: ${{ success() }}
-        uses: actions/github-script@v6
+        uses: actions/github-script@v9
         with:
           script: |
             const { owner, repo } = context.repo;
